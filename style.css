@@ -1,0 +1,14 @@
+.shake {
+  height: auto;
+  width: auto;
+  font-size: 5rem;
+}
+body {
+  font-size: xx-large;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
