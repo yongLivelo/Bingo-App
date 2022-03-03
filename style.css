@@ -12,3 +12,23 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.shooked {
+  align-items: center;
+}
+
+.B__num {
+  background-color: red;
+}
+.I__num {
+  background-color: orange;
+}
+.N__num {
+  background-color: yellow;
+}
+.G__num {
+  background-color: blue;
+}
+.O__num {
+  background-color: indigo;
+}
