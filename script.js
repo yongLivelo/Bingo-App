@@ -9,7 +9,8 @@ let wait = false;
 const audio = new Audio();
 audio.loop = true;
 audio.src = "./assets/bingoShake.mp3";
-document.querySelector(".shake").addEventListener("click", shake);
+
+document.querySelector(".shake").addEventListener("click", () => shake());
 document.querySelector(".shake").addEventListener("mousedown", () => {
   audio.play();
 });
@@ -58,6 +59,7 @@ function shake() {
         `${currentLetter[3] || currentLetter[0]}` + `<ul>${el}</ul>`;
       document.querySelector(`.${currentLetter[0]}__num`).innerHTML =
         currentLetter[3];
+      document.querySelector(".lastNum").innerHTML = randomNum;
     });
     wait = false;
   }, 1200);
