@@ -1,9 +1,13 @@
 .shake {
+}
+
+button {
   height: auto;
   width: auto;
   font-size: 5rem;
 }
 body {
+  background-color: rgb(50, 50, 51);
   font-size: xx-large;
 }
 
@@ -17,18 +21,28 @@ body {
   align-items: center;
 }
 
+li {
+  list-style: none;
+}
 .B__num {
-  background-color: red;
+  background-color: rgb(192, 86, 86);
 }
 .I__num {
-  background-color: orange;
+  background-color: rgb(208, 166, 87);
 }
 .N__num {
-  background-color: yellow;
+  background-color: rgb(238, 238, 143);
 }
 .G__num {
-  background-color: blue;
+  background-color: rgb(122, 122, 238);
 }
 .O__num {
-  background-color: indigo;
+  background-color: rgb(183, 116, 232);
+}
+
+.column {
+  text-align: center;
+  font-size: 3rem;
+  float: left;
+  width: 20%;
 }
