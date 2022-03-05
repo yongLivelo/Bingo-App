@@ -13,9 +13,13 @@ audio.src = "./assets/bingoShake.mp3";
 document.querySelector(".shake").addEventListener("click", () => shake());
 document.querySelector(".shake").addEventListener("mousedown", () => {
   audio.play();
+  audio.loop = true;
 });
 document.querySelector(".shake").addEventListener("mouseup", () => {
-  setTimeout(() => audio.pause(), 1000);
+  setTimeout(() => {
+    audio.pause();
+    audio.loop = false;
+  }, 1000);
 });
 // document.querySelector(".bingo").addEventListener("click");
 function getNumber(allArr) {
@@ -59,7 +63,9 @@ function shake() {
         `${currentLetter[3] || currentLetter[0]}` + `<ul>${el}</ul>`;
       document.querySelector(`.${currentLetter[0]}__num`).innerHTML =
         currentLetter[3];
-      document.querySelector(".lastNum").innerHTML = randomNum;
+      document.querySelector(
+        ".lastNum"
+      ).innerHTML = `${currentLetter[0]}${randomNum}`;
     });
     wait = false;
   }, 1200);
