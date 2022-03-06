@@ -68,6 +68,10 @@ function shake() {
       ).innerHTML = `${currentLetter[0]}${randomNum}`;
     });
     wait = false;
+    var toSpeak = new SpeechSynthesisUtterance();
+    toSpeak.lang = "en";
+    toSpeak.text = `${currentLetter[0]}${randomNum}`;
+    window.speechSynthesis.speak(toSpeak);
   }, 1200);
 }
 
