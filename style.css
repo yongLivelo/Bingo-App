@@ -4,6 +4,9 @@
   user-select: none;
 }
 
+.hidden > .ul {
+  display: none;
+}
 h {
   color: yellow;
   font-size: 3rem;

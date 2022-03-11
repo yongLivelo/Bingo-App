@@ -4,6 +4,7 @@ let I = [];
 let N = [];
 let G = [];
 let O = [];
+
 let currentLetter = [];
 let wait = false;
 const audio = new Audio();
@@ -60,7 +61,7 @@ function shake() {
     document.querySelector(`.${currentLetter[0]}__num`).innerHTML = "";
     currentLetter[1].forEach((el) => {
       currentLetter[3] =
-        `${currentLetter[3] || currentLetter[0]}` + `<ul>${el}</ul>`;
+        `${currentLetter[3] || currentLetter[0]}` + `<ul class="ul">${el}</ul>`;
       document.querySelector(`.${currentLetter[0]}__num`).innerHTML =
         currentLetter[3];
       document.querySelector(
@@ -71,12 +72,14 @@ function shake() {
     var toSpeak = new SpeechSynthesisUtterance();
     toSpeak.lang = "en";
     toSpeak.text = `${currentLetter[0]}${randomNum}`;
+    setTimeout(() => window.speechSynthesis.speak(toSpeak), 1000);
     window.speechSynthesis.speak(toSpeak);
   }, 1200);
 }
 
-document.onmousemove = function (event) {
-  const pointerX = event.pageX;
-  const pointerY = event.pageY;
-  console.log(pointerX, pointerY);
-};
+document.querySelector(".shooked").addEventListener("click", (e) => {
+  e.preventDefault();
+  document
+    .querySelector(`.${e.target.classList[0]}`)
+    .classList.toggle("hidden");
+});
