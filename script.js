@@ -1,9 +1,10 @@
 "use strict";
-let B = [];
-let I = [];
-let N = [];
-let G = [];
-let O = [];
+
+let B = [],
+  I = [],
+  N = [],
+  G = [],
+  O = [];
 
 let currentLetter = [];
 let wait = false;
@@ -12,6 +13,7 @@ audio.loop = true;
 audio.src = "./assets/bingoShake.mp3";
 
 document.querySelector(".shake").addEventListener("click", () => shake());
+
 document.querySelector(".shake").addEventListener("mousedown", () => {
   audio.play();
   audio.loop = true;
@@ -22,7 +24,7 @@ document.querySelector(".shake").addEventListener("mouseup", () => {
     audio.loop = false;
   }, 1000);
 });
-// document.querySelector(".bingo").addEventListener("click");
+
 function getNumber(allArr) {
   let randomNum = Math.trunc(Math.random() * 75 + 1);
   if (allArr.includes(randomNum)) {
@@ -31,6 +33,7 @@ function getNumber(allArr) {
   }
   return randomNum;
 }
+
 function shake() {
   if (wait) return;
   wait = true;
@@ -58,16 +61,23 @@ function shake() {
       currentLetter = ["O", O];
       O.sort((a, b) => a - b);
     }
-    document.querySelector(`.${currentLetter[0]}__num`).innerHTML = "";
+
     currentLetter[1].forEach((el) => {
       currentLetter[3] =
-        `${currentLetter[3] || currentLetter[0]}` + `<ul class="ul">${el}</ul>`;
-      document.querySelector(`.${currentLetter[0]}__num`).innerHTML =
-        currentLetter[3];
+        `${currentLetter[3] || currentLetter[0]}` +
+        `<ul class="ul"><p>${el}<p></ul>`;
+
+      console.log(currentLetter);
+
       document.querySelector(
-        ".lastNum"
-      ).innerHTML = `${currentLetter[0]}${randomNum}`;
+        `.${currentLetter[0]}__num`
+      ).innerHTML = `${currentLetter[3]} `;
+
+      document.querySelector(
+        ".lastNum-p"
+      ).innerHTML = `${currentLetter[0]}-${randomNum}`;
     });
+
     wait = false;
     var toSpeak = new SpeechSynthesisUtterance();
     toSpeak.lang = "en";

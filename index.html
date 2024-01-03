@@ -1,22 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Bingo Shaker</title>
   </head>
   <body>
-    <h>HAPPY BIRTHDAY LOLA ZENA</h>
-    <div class="container">
-      <img class="shake unselectable" draggable="false" src="./assets/bingoShaker.png"></img>
+    <div class="bingo_shaker">
+      <div class="shake">
+        <img
+          class="shake_img"
+          draggable="false"
+          src="./assets/bingoShaker.png"
+        />
+      </div>
+
+      <div class="lastNum">
+        <p class="lastNum-p">...</p>
+      </div>
+
+      <div class="shooked">
+        <li class="B__num column">
+          <div><p class="letter_shooked">B</p></div>
+          <!-- <div class="B__num__numbers" style="position: relative"></div> -->
+          <!-- <ul>
+            <p>1</p>
+          </ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+          <ul></ul>
+
+          <ul></ul>
+          <ul>
+            <p>1</p>
+          </ul> -->
+        </li>
+        <li class="I__num column">
+          <div><p class="letter_shooked">I</p></div>
+          <!-- <div class="I__num__numbers"></div> -->
+        </li>
+        <li class="N__num column">
+          <div><p class="letter_shooked">N</p></div>
+          <!-- <div class="N__num__numbers"></div> -->
+        </li>
+        <li class="G__num column">
+          <div><p class="letter_shooked">G</p></div>
+          <!-- <div class="G__num__numbers"></div> -->
+        </li>
+        <li class="O__num column">
+          <div><p class="letter_shooked">O</p></div>
+          <!-- <div class="O__num__numbers"></div> -->
+        </li>
+      </div>
     </div>
-    <div class="shooked">
-      <p class="lastNum"></p>
-      <li class="B__num column">B</li>
-      <li class="I__num column">I</li>
-      <li class="N__num column">N</li>
-      <li class="G__num column">G</li>
-      <li class="O__num column">O</li>
-    </div>
-  
   </body>
-  <script src="script.js"></script>
 </html>
